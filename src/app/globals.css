@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette */
-  --color-primary: #E63946;
-  --color-primary-hover: #CC2F3B;
-  --color-secondary: #F4A261;
-  --color-surface-page: #0D0D0D;
-  --color-surface-card: #1A1A1A;
-  --color-surface-elevated: #242424;
-  --color-text-primary: #F5F5F5;
-  --color-text-muted: #9CA3AF;
-  --color-border: #2E2E2E;
+  /* Palette — Moto Guzzi Stelvio: nero, antracite, giallo fluo */
+  --color-primary: #D4FF00;
+  --color-primary-hover: #BFEA00;
+  --color-secondary: #A8C900;
+  --color-surface-page: #080808;
+  --color-surface-card: #131313;
+  --color-surface-elevated: #2A2A2A;
+  --color-text-primary: #F0F0F0;
+  --color-text-muted: #6B7280;
+  --color-border: #2A2A2A;
 
   /* Font */
   --font-display: var(--font-bebas-neue);

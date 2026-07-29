@@ -1,17 +1,18 @@
 # Design Tokens — Enzo Rock/Pop
 
-## Palette
+## Palette — ispirata Moto Guzzi Stelvio 2026
 
 | Token | Valore | Uso |
 |---|---|---|
-| `--color-primary` | `#E63946` | CTA, accenti principali, hover |
-| `--color-secondary` | `#F4A261` | Accenti caldi, badge, highlights |
-| `--color-surface-page` | `#0D0D0D` | Sfondo pagina |
-| `--color-surface-card` | `#1A1A1A` | Sfondo card |
-| `--color-surface-elevated` | `#242424` | Navbar, elementi elevati |
-| `--color-text-primary` | `#F5F5F5` | Testo principale |
-| `--color-text-muted` | `#9CA3AF` | Testo secondario, caption |
-| `--color-border` | `#2E2E2E` | Bordi sottili |
+| `--color-primary` | `#D4FF00` | Giallo fluo — CTA, accenti, highlights |
+| `--color-primary-hover` | `#BFEA00` | Stato hover CTA |
+| `--color-secondary` | `#A8C900` | Giallo-verde, variante secondaria |
+| `--color-surface-page` | `#080808` | Nero profondo — sfondo pagina |
+| `--color-surface-card` | `#131313` | Nero card |
+| `--color-surface-elevated` | `#2A2A2A` | Grigio antracite — navbar, sezioni elevate |
+| `--color-text-primary` | `#F0F0F0` | Bianco freddo — testo principale |
+| `--color-text-muted` | `#6B7280` | Grigio medio — testo secondario |
+| `--color-border` | `#2A2A2A` | Bordi antracite |
 
 ## Tipografia
 

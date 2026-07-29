@@ -22,9 +22,9 @@ export function Button({
 
   const variants = {
     primary:
-      'bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)]',
+      'bg-[var(--color-primary)] text-black hover:bg-[var(--color-primary-hover)]',
     secondary:
-      'bg-transparent border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white',
+      'bg-transparent border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-black',
     ghost:
       'bg-transparent text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]',
   }
