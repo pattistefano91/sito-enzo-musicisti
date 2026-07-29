@@ -2,7 +2,7 @@
 
 # ENZO — Sito Musicista Rock/Pop
 
-Sito per Enzo, musicista e insegnante Rock/Pop. Stack: Next.js 16 App Router, TypeScript strict, Tailwind CSS v4, Framer Motion 12.
+Sito per Enzo Boscarino, batterista e insegnante Rock/Pop. Stack: Next.js 16 App Router, TypeScript strict, Tailwind CSS v4, Framer Motion 12.
 
 ## Stack tecnologico
 

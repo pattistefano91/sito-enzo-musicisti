@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion, type Transition, type TargetAndTransition } from 'framer-motion'
 import { Button, Badge, Container } from '@/components/ui'
 
@@ -21,24 +22,24 @@ export function Hero() {
   return (
     <section className="relative flex items-center justify-center min-h-[calc(100vh-4rem)] overflow-hidden">
 
-      {/* Foto hero placeholder — sostituire con <Image> reale */}
-      <div
+      {/* Foto hero reale di Enzo */}
+      <Image
+        src="/images/hero-bg.jpg"
+        alt="Enzo Boscarino alla batteria"
+        fill
+        priority
+        quality={90}
+        className="object-cover object-center"
         aria-hidden
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=1600&q=80')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-        }}
       />
 
-      {/* Overlay gradiente nero */}
+      {/* Overlay: scuro a sinistra per il testo, semi-trasparente a destra per vedere Enzo */}
       <div
         aria-hidden
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(to right, rgba(8,8,8,0.93) 45%, rgba(8,8,8,0.45) 100%)',
+            'linear-gradient(to right, rgba(8,8,8,0.88) 35%, rgba(8,8,8,0.3) 70%, rgba(8,8,8,0.15) 100%)',
         }}
       />
 
