@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion, type Transition, type TargetAndTransition } from 'framer-motion'
 import { Container, Divider } from '@/components/ui'
 import { ABOUT } from '@/data/about'
@@ -51,15 +52,13 @@ export function AboutSection() {
             transition={{ duration: 0.7, ease: 'easeOut' as const }}
             className="relative"
           >
-            <div className="aspect-[3/4] rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-surface-elevated)]">
-              {/* Placeholder foto — sostituire con <Image> reale */}
-              <div
-                className="w-full h-full"
-                style={{
-                  backgroundImage: `url('${ABOUT.photoPlaceholder}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
+            <div className="aspect-square rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-surface-elevated)] relative">
+              <Image
+                src="/images/enzo-portrait.png"
+                alt="Enzo Boscarino — batterista"
+                fill
+                quality={90}
+                className="object-cover object-top"
               />
             </div>
             {/* Accent border decorativo */}
