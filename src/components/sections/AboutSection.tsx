@@ -1,23 +1,10 @@
 'use client'
 
 import Image from 'next/image'
-import { motion, type Transition, type TargetAndTransition } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Container, Divider } from '@/components/ui'
-import { ABOUT } from '@/data/about'
+import { ABOUT_BIO, ABOUT_STATS } from '@/data/about'
 
-interface FadeProps {
-  initial: TargetAndTransition
-  animate: TargetAndTransition
-  transition: Transition
-}
-
-function fadeUp(delay = 0): FadeProps {
-  return {
-    initial: { opacity: 0, y: 32 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.65, delay, ease: 'easeOut' as const },
-  }
-}
 
 export function AboutSection() {
   return (
@@ -26,17 +13,19 @@ export function AboutSection() {
 
         {/* Header */}
         <motion.div
-          {...fadeUp(0)}
           viewport={{ once: true }}
-          whileInView={fadeUp(0).animate}
-          initial={fadeUp(0).initial}
-          animate={undefined}
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 32 }}
+          transition={{ duration: 0.65, ease: 'easeOut' as const }}
           className="mb-16"
         >
-          <span className="text-label text-[var(--color-primary)] text-xs tracking-widest">
+          <span className="text-label text-[var(--color-primary)] text-xs tracking-widest uppercase">
             Chi sono
           </span>
-          <h2 className="text-heading-1 text-[var(--color-text-primary)] mt-2">
+          <h2
+            className="text-[clamp(2.5rem,6vw,4.5rem)] text-[var(--color-text-primary)] mt-2 leading-none"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
             ENZO BOSCARINO
           </h2>
           <Divider className="mt-6 w-16 border-[var(--color-primary)] border-t-2" />
@@ -44,7 +33,7 @@ export function AboutSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          {/* Foto */}
+          {/* Foto Russia hockey arena */}
           <motion.div
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -52,23 +41,22 @@ export function AboutSection() {
             transition={{ duration: 0.7, ease: 'easeOut' as const }}
             className="relative"
           >
-            <div className="aspect-square rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-surface-elevated)] relative">
+            <div className="aspect-[4/3] rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-surface-elevated)] relative">
               <Image
-                src="/images/enzo-portrait.png"
-                alt="Enzo Boscarino — batterista"
+                src="/images/enzo-russia.png"
+                alt="Enzo Boscarino — Stadio hockey Russia"
                 fill
                 quality={90}
-                className="object-cover object-top"
+                className="object-cover object-center"
               />
             </div>
-            {/* Accent border decorativo */}
             <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-[var(--color-primary)]/30 rounded-[var(--radius-lg)] -z-10" />
           </motion.div>
 
-          {/* Testo + stats + credenziali */}
+          {/* Testo + stats */}
           <div className="flex flex-col gap-8">
 
-            {/* Bio */}
+            {/* Bio overview */}
             <motion.div
               viewport={{ once: true }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -76,7 +64,7 @@ export function AboutSection() {
               transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' as const }}
               className="flex flex-col gap-4"
             >
-              {ABOUT.bio.map((paragraph, i) => (
+              {ABOUT_BIO.map((paragraph, i) => (
                 <p key={i} className="text-body-md text-[var(--color-text-muted)] leading-relaxed">
                   {paragraph}
                 </p>
@@ -91,36 +79,20 @@ export function AboutSection() {
               transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' as const }}
               className="grid grid-cols-3 gap-4 py-6 border-y border-[var(--color-border)]"
             >
-              {ABOUT.stats.map((stat) => (
+              {ABOUT_STATS.map((stat) => (
                 <div key={stat.label} className="flex flex-col gap-1">
                   <span
-                    className="text-heading-2 text-[var(--color-primary)] leading-none"
+                    className="text-[clamp(2rem,5vw,3rem)] text-[var(--color-primary)] leading-none"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
                     {stat.value}
                   </span>
-                  <span className="text-caption text-[var(--color-text-muted)]">
+                  <span className="text-caption text-[var(--color-text-muted)] text-xs">
                     {stat.label}
                   </span>
                 </div>
               ))}
             </motion.div>
-
-            {/* Credenziali */}
-            <motion.ul
-              viewport={{ once: true }}
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 24 }}
-              transition={{ duration: 0.6, delay: 0.45, ease: 'easeOut' as const }}
-              className="flex flex-col gap-3"
-            >
-              {ABOUT.credentials.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] flex-shrink-0" />
-                  <span className="text-body-md text-[var(--color-text-muted)]">{item}</span>
-                </li>
-              ))}
-            </motion.ul>
 
           </div>
         </div>

@@ -1,13 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
-import { NAV_LINKS, ARTIST } from '@/data/navigation'
+import { NAV_LINKS } from '@/data/navigation'
 
 export function Navbar() {
-  const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -17,7 +16,6 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // chiude menu su resize desktop
   useEffect(() => {
     const onResize = () => { if (window.innerWidth >= 768) setMenuOpen(false) }
     window.addEventListener('resize', onResize)
@@ -36,35 +34,36 @@ export function Navbar() {
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
 
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-baseline gap-2 group"
-            onClick={() => setMenuOpen(false)}
-          >
-            <span className="text-heading-3 text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)] transition-colors leading-none">
-              {ARTIST.firstName}
-            </span>
-            <span className="text-heading-3 text-[var(--color-primary)] leading-none">
-              {ARTIST.lastName}
-            </span>
-            <span className="hidden sm:inline text-caption text-[var(--color-text-muted)] ml-1 self-center">
-              / {ARTIST.role}
-            </span>
+          {/* Logo EB */}
+          <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 group">
+            <div className="relative w-10 h-10 flex-shrink-0">
+              <Image
+                src="/images/logo-eb.png"
+                alt="Enzo Boscarino logo"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <div className="hidden sm:flex flex-col leading-none">
+              <span
+                className="text-[1.1rem] text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)] transition-colors"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                ENZO <span className="text-[var(--color-primary)]">BOSCARINO</span>
+              </span>
+              <span className="text-[0.6rem] text-[var(--color-text-muted)] tracking-widest uppercase">
+                Batterista
+              </span>
+            </div>
           </Link>
 
           {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={cn(
-                    'text-label text-sm transition-colors hover:text-[var(--color-primary)]',
-                    pathname === link.href
-                      ? 'text-[var(--color-primary)]'
-                      : 'text-[var(--color-text-muted)]'
-                  )}
+                  className="text-[0.72rem] font-medium tracking-widest uppercase text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   {link.label}
                 </a>
@@ -74,45 +73,25 @@ export function Navbar() {
 
           {/* Hamburger mobile */}
           <button
-            className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-[var(--radius-md)] hover:bg-[var(--color-surface-elevated)] transition-colors"
+            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-[var(--radius-md)] hover:bg-[var(--color-surface-elevated)] transition-colors"
             aria-label={menuOpen ? 'Chiudi menu' : 'Apri menu'}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
           >
-            <span
-              className={cn(
-                'block h-0.5 w-5 bg-[var(--color-text-primary)] transition-all duration-300',
-                menuOpen && 'translate-y-2 rotate-45'
-              )}
-            />
-            <span
-              className={cn(
-                'block h-0.5 w-5 bg-[var(--color-text-primary)] transition-all duration-300',
-                menuOpen && 'opacity-0'
-              )}
-            />
-            <span
-              className={cn(
-                'block h-0.5 w-5 bg-[var(--color-text-primary)] transition-all duration-300',
-                menuOpen && '-translate-y-2 -rotate-45'
-              )}
-            />
+            <span className={cn('block h-0.5 w-5 bg-[var(--color-text-primary)] transition-all duration-300', menuOpen && 'translate-y-2 rotate-45')} />
+            <span className={cn('block h-0.5 w-5 bg-[var(--color-text-primary)] transition-all duration-300', menuOpen && 'opacity-0')} />
+            <span className={cn('block h-0.5 w-5 bg-[var(--color-text-primary)] transition-all duration-300', menuOpen && '-translate-y-2 -rotate-45')} />
           </button>
         </div>
 
         {/* Mobile menu */}
-        <div
-          className={cn(
-            'md:hidden overflow-hidden transition-all duration-300',
-            menuOpen ? 'max-h-64 pb-4' : 'max-h-0'
-          )}
-        >
+        <div className={cn('lg:hidden overflow-hidden transition-all duration-300', menuOpen ? 'max-h-96 pb-4' : 'max-h-0')}>
           <ul className="flex flex-col gap-1 border-t border-[var(--color-border)] pt-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="block px-2 py-2.5 text-label text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors rounded-[var(--radius-md)] hover:bg-[var(--color-surface-elevated)]"
+                  className="block px-2 py-2.5 text-[0.75rem] font-medium tracking-widest uppercase text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors rounded-[var(--radius-md)] hover:bg-[var(--color-surface-elevated)]"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
