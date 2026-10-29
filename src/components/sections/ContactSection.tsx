@@ -6,7 +6,7 @@ import { Container, Button, Divider } from '@/components/ui'
 import { CONTACT } from '@/data/contact'
 import { SOCIALS } from './SocialLinks'
 
-type Reason = 'lezione' | 'booking' | 'altro'
+type Reason = 'lezione' | 'consulenza'
 
 export function ContactSection() {
   const [reason, setReason] = useState<Reason>('lezione')
@@ -66,8 +66,7 @@ export function ContactSection() {
                 <div className="flex gap-2 flex-wrap">
                   {([
                     { id: 'lezione', label: 'Lezione privata' },
-                    { id: 'booking', label: 'Booking / Tour' },
-                    { id: 'altro', label: 'Altro' },
+                    { id: 'consulenza', label: 'Consulenza online' },
                   ] as { id: Reason; label: string }[]).map((r) => (
                     <button
                       key={r.id}
