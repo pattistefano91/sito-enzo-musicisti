@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Container, Button, Divider } from '@/components/ui'
 import { CONTACT } from '@/data/contact'
+import { SOCIALS } from './SocialLinks'
 
 type Reason = 'lezione' | 'booking' | 'altro'
 
@@ -133,7 +134,7 @@ export function ContactSection() {
               </h3>
               {[
                 { icon: '✉️', label: 'Email', value: CONTACT.email, href: `mailto:${CONTACT.email}` },
-                { icon: '📞', label: 'Telefono', value: CONTACT.phone, href: `tel:${CONTACT.phone}` },
+                { icon: '📞', label: 'Telefono', value: CONTACT.phone, href: `tel:+39${CONTACT.phone.replace(/\s/g, '')}` },
               ].map((c) => (
                 <a
                   key={c.label}
@@ -155,16 +156,15 @@ export function ContactSection() {
                 SOCIAL
               </h3>
               <div className="flex gap-3 flex-wrap">
-                {[
-                  { label: 'Instagram', value: CONTACT.instagram, href: '#' },
-                  { label: 'YouTube', value: CONTACT.youtube, href: '#' },
-                  { label: 'Spotify', value: CONTACT.spotify, href: '#' },
-                ].map((s) => (
+                {SOCIALS.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
-                    className="px-4 py-2 rounded-pill border border-[var(--color-border)] text-label text-xs text-[var(--color-text-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 rounded-pill border border-[var(--color-border)] text-label text-xs text-[var(--color-text-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                   >
+                    {s.icon}
                     {s.label}
                   </a>
                 ))}
@@ -178,11 +178,12 @@ export function ContactSection() {
               </h3>
               <p className="text-body-md text-[var(--color-text-muted)]">
                 {CONTACT.studio.name}<br />
-                {CONTACT.studio.address}<br />
-                {CONTACT.studio.city}
+                {CONTACT.studio.address}
               </p>
               <a
                 href={CONTACT.studio.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-label text-xs text-[var(--color-primary)] hover:underline"
               >
                 Apri in Google Maps →

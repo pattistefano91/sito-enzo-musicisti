@@ -1,13 +1,9 @@
 export const CONTACT = {
-  email: '[email@da-aggiornare.com]',
-  phone: '[+39 000 000 0000]',
-  instagram: '[handle Instagram]',
-  youtube: '[canale YouTube]',
-  spotify: '[profilo Spotify]',
+  email: 'enzoboscarinodrummer@gmail.com',
+  phone: '329 543 2713',
   studio: {
     name: 'Studio Boscarino',
-    address: '[Indirizzo da aggiornare]',
-    city: '[Città]',
-    mapsUrl: '#', // sostituire con link Google Maps reale
+    address: 'Milano, Casalmaiocco (LO)',
+    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Casalmaiocco+LO',
   },
 } as const

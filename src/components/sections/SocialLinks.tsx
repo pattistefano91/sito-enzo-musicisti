@@ -1,4 +1,4 @@
-const SOCIALS = [
+export const SOCIALS = [
   {
     label: 'YouTube',
     href: 'https://www.youtube.com/@EnzoBoscarino',
