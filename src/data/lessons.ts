@@ -45,8 +45,8 @@ export const LESSONS: Lesson[] = [
 ]
 
 export const STUDIO: StudioInfo = {
-  name: 'Studio Boscarino',
-  address: '[Indirizzo da aggiornare]',
-  city: '[Città da aggiornare]',
+  name: 'EB Studio',
+  address: 'Quartiere Madonnina',
+  city: 'Casalmaiocco (LO)',
   note: 'Parcheggio disponibile. Batteria acustica e elettronica a disposizione.',
 }

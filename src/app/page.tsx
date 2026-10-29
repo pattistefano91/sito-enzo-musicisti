@@ -74,7 +74,7 @@ export default function Home() {
         title="DOVE MI TROVI"
         paragraphs={DOVE_MI_TROVI_TEXT}
         imageSrc="/images/studio-2.jpg"
-        imageAlt="Studio Casalmaiocco"
+        imageAlt="EB Studio — Casalmaiocco"
         imageAspect="aspect-[4/3]"
         imagePosition="right"
         dark
