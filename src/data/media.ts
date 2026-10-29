@@ -2,6 +2,7 @@ export interface MediaVideo {
   id: string
   title: string
   youtubeId: string
+  start?: number // secondi
   description: string
 }
 
@@ -12,31 +13,31 @@ export interface MediaPhoto {
   caption: string
 }
 
-// I 4 video più visti del canale https://www.youtube.com/@EnzoBoscarino (ottobre 2026)
 export const VIDEOS: MediaVideo[] = [
   {
     id: 'v1',
-    title: 'Laurea in Batteria — Conservatorio Verdi Milano',
-    youtubeId: 'JxCghXOhpVg',
-    description: 'Recital dedicato a Pino Daniele — 66K visualizzazioni',
+    title: 'Footsteps in the Dark — Jarrod Lawson',
+    youtubeId: '6sGI1aWtNV8',
+    description: 'Enzo Boscarino',
   },
   {
     id: 'v2',
-    title: 'Un amore da favola — Lucrezia Germano',
-    youtubeId: '1FPxChmUNm8',
-    description: 'Lucrezia Germano ed Enzo Boscarino — 3,3K visualizzazioni',
+    title: 'S-Quantized Heart — Ludwig Neusonic',
+    youtubeId: 'v1TVT6LpZL8',
+    description: 'Enzo Boscarino & Ludwig Neusonic',
   },
   {
     id: 'v3',
-    title: 'SixPack Groove',
-    youtubeId: 'guvuM3LJttk',
-    description: 'Enzo Boscarino — 3,1K visualizzazioni',
+    title: 'Concerto con Al Bano Carrisi',
+    youtubeId: 'gzWb0NLB0ZM',
+    start: 3522,
+    description: 'Festa San Francesco da Paola, lungomare — 28/4/2025',
   },
   {
     id: 'v4',
-    title: 'Nessun Rimpianto — Live with Maxmania',
-    youtubeId: 'IIE_wbVNhBQ',
-    description: 'Enzo Boscarino live — 2,7K visualizzazioni',
+    title: 'On and On — Ole Børud',
+    youtubeId: '6WzIvEOo27k',
+    description: 'Drum cover — Enzo Boscarino',
   },
 ]
 

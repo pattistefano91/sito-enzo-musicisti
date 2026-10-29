@@ -82,7 +82,7 @@ export function MediaSection() {
                 <div key={v.id} className="flex flex-col gap-3">
                   <div className="relative aspect-video rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-surface-elevated)]">
                     <iframe
-                      src={`https://www.youtube.com/embed/${v.youtubeId}`}
+                      src={`https://www.youtube.com/embed/${v.youtubeId}${v.start ? `?start=${v.start}` : ''}`}
                       title={v.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
