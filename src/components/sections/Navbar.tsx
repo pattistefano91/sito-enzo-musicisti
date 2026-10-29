@@ -36,7 +36,7 @@ export function Navbar() {
 
           {/* Logo EB */}
           <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 flex-shrink-0">
+            <div className="relative w-16 h-10 flex-shrink-0">
               <Image
                 src="/images/logo-eb.png"
                 alt="Enzo Boscarino logo"
