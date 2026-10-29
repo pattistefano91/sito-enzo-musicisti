@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { motion, type Transition, type TargetAndTransition } from 'framer-motion'
 import { Button, Badge, Container } from '@/components/ui'
+import { EndorsementsSection } from './EndorsementsSection'
 
 interface FadeProps {
   initial: TargetAndTransition
@@ -89,7 +90,9 @@ export function Hero() {
         }}
       />
 
-      <Container className="relative z-10 py-24">
+      <EndorsementsSection />
+
+      <Container className="relative z-10 pt-48 pb-24">
         <div className="flex flex-col items-start gap-6 max-w-2xl">
 
           <motion.div {...fadeUp(0)}>

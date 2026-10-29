@@ -1,5 +1,4 @@
 import { Hero } from '@/components/sections/Hero'
-import { EndorsementsSection } from '@/components/sections/EndorsementsSection'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { BioSection } from '@/components/sections/BioSection'
 import { RiferimentiSection } from '@/components/sections/RiferimentiSection'
@@ -18,7 +17,6 @@ export default function Home() {
   return (
     <main className="flex flex-col flex-1">
       <Hero />
-      <EndorsementsSection />
       <AboutSection />
 
       <BioSection

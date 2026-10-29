@@ -56,7 +56,7 @@ export const DOVE_MI_TROVI_TEXT = [
 
 export const ENDORSEMENTS = [
   { name: 'UFIP', logo: '/images/logo-ufip.png', url: 'https://www.ufip.it' },
-  { name: 'Aramini', logo: '/images/logo-aramini.webp', url: 'https://www.aramini.net' },
-  { name: 'Ludwig', logo: '/images/logo-ludwig.jpg', url: 'https://www.ludwig-drums.com' },
+  { name: 'Aramini', logo: '/images/logo-aramini.png', url: 'https://www.aramini.net' },
+  { name: 'Ludwig', logo: '/images/logo-ludwig.svg', url: 'https://www.ludwig-drums.com' },
   { name: 'Lantec', logo: '/images/logo-lantec.png', url: 'https://www.lantecsnc.it' },
 ]

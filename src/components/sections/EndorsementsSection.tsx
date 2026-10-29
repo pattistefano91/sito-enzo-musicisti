@@ -1,71 +1,45 @@
 'use client'
 
 import Image from 'next/image'
-import { motion, type Transition, type TargetAndTransition } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Container } from '@/components/ui'
 import { ENDORSEMENTS } from '@/data/about'
 
-interface FadeProps {
-  initial: TargetAndTransition
-  animate: TargetAndTransition
-  transition: Transition
-}
-
-function fadeUp(delay = 0): FadeProps {
-  return {
-    initial: { opacity: 0, y: 24 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.55, delay, ease: 'easeOut' as const },
-  }
-}
-
 export function EndorsementsSection() {
   return (
-    <section className="py-16 bg-[var(--color-surface-page)] border-b border-[var(--color-border)]">
+    <div className="absolute top-16 inset-x-0 z-20">
       <Container>
-
-        <motion.p
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 16 }}
-          transition={{ duration: 0.5, ease: 'easeOut' as const }}
-          className="text-center text-[0.65rem] tracking-[0.25em] uppercase text-[var(--color-text-muted)] mb-10"
-        >
-          Endorsements
-        </motion.p>
-
         <motion.div
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 24 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' as const }}
-          className="flex flex-wrap items-center justify-center gap-10 md:gap-16"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' as const }}
+          className="flex flex-col items-start gap-2 pt-3"
         >
-          {ENDORSEMENTS.map((brand, i) => (
-            <motion.a
-              key={brand.name}
-              href={brand.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              viewport={{ once: true }}
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.15 + i * 0.08, ease: 'easeOut' as const }}
-              whileHover={{ scale: 1.08 }}
-              className="relative flex items-center justify-center w-28 h-14 grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-300"
-              aria-label={brand.name}
-            >
-              <Image
-                src={brand.logo}
-                alt={brand.name}
-                fill
-                className="object-contain"
-              />
-            </motion.a>
-          ))}
+          <p className="text-[0.6rem] tracking-[0.25em] uppercase text-[var(--color-text-muted)]">
+            Endorsements
+          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-8">
+            {ENDORSEMENTS.map((brand) => (
+              <a
+                key={brand.name}
+                href={brand.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={brand.name}
+                className="relative block w-[4.25rem] h-9 sm:w-24 sm:h-11 opacity-75 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              >
+                <Image
+                  src={brand.logo}
+                  alt={brand.name}
+                  fill
+                  unoptimized={brand.logo.endsWith('.svg')}
+                  className="object-contain object-left"
+                />
+              </a>
+            ))}
+          </div>
         </motion.div>
-
       </Container>
-    </section>
+    </div>
   )
 }
