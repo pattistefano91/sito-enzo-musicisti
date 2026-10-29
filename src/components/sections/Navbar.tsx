@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import { NAV_LINKS } from '@/data/navigation'
+import { SocialLinks } from './SocialLinks'
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -34,6 +35,7 @@ export function Navbar() {
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
 
+          <div className="flex items-center gap-4">
           {/* Logo EB */}
           <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 group">
             <div className="relative w-16 h-10 flex-shrink-0">
@@ -56,6 +58,9 @@ export function Navbar() {
               </span>
             </div>
           </Link>
+
+          <SocialLinks className="flex items-center gap-3 sm:pl-4 sm:border-l sm:border-[var(--color-border)]" />
+          </div>
 
           {/* Desktop links */}
           <ul className="hidden lg:flex items-center gap-6">
