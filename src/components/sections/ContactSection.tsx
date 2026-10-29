@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Container, Button, Divider } from '@/components/ui'
 import { CONTACT } from '@/data/contact'
-import { CONTACT_SOCIALS } from './SocialLinks'
+import { SOCIALS } from './SocialLinks'
 
 type Reason = 'lezione' | 'consulenza'
 
@@ -155,7 +155,7 @@ export function ContactSection() {
                 SOCIAL
               </h3>
               <div className="flex gap-3 flex-wrap">
-                {CONTACT_SOCIALS.map((s) => (
+                {SOCIALS.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}

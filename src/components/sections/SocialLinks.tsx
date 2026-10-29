@@ -26,11 +26,6 @@ export const SOCIALS = [
       </svg>
     ),
   },
-]
-
-// Solo per la sezione contatti: la navbar mostra YouTube, Instagram e Facebook
-export const CONTACT_SOCIALS = [
-  ...SOCIALS,
   {
     label: 'Spotify',
     href: 'https://open.spotify.com/playlist/40B53wK7kq4syG7ZfSxTmx?si=4e21c07905ea4729',
