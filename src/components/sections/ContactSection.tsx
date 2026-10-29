@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Container, Button, Divider } from '@/components/ui'
 import { CONTACT } from '@/data/contact'
-import { SOCIALS } from './SocialLinks'
+import { CONTACT_SOCIALS } from './SocialLinks'
 
 type Reason = 'lezione' | 'consulenza'
 
@@ -133,7 +133,7 @@ export function ContactSection() {
               </h3>
               {[
                 { icon: '✉️', label: 'Email', value: CONTACT.email, href: `mailto:${CONTACT.email}` },
-                { icon: '📞', label: 'Telefono', value: CONTACT.phone, href: `tel:+39${CONTACT.phone.replace(/\s/g, '')}` },
+                { icon: '📞', label: 'Telefono', value: CONTACT.phone, href: `tel:${CONTACT.phone.replace(/\s/g, '')}` },
               ].map((c) => (
                 <a
                   key={c.label}
@@ -155,7 +155,7 @@ export function ContactSection() {
                 SOCIAL
               </h3>
               <div className="flex gap-3 flex-wrap">
-                {SOCIALS.map((s) => (
+                {CONTACT_SOCIALS.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
@@ -177,7 +177,8 @@ export function ContactSection() {
               </h3>
               <p className="text-body-md text-[var(--color-text-muted)]">
                 {CONTACT.studio.name}<br />
-                {CONTACT.studio.address}
+                {CONTACT.studio.address}<br />
+                {CONTACT.studio.note}
               </p>
               <a
                 href={CONTACT.studio.mapsUrl}

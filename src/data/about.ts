@@ -50,7 +50,7 @@ export const RIFERIMENTI_TEXT = [
 ]
 
 export const DOVE_MI_TROVI_TEXT = [
-  'Insegno a Milano e Casalmaiocco (LO). Effettuo anche lezioni di studio recording presso il mio studio privato a Casalmaiocco, a soli 10 minuti da Milano.',
+  'Insegno a Milano e Casalmaiocco (LO). Effettuo anche lezioni di studio recording presso il mio studio privato a Casalmaiocco, a 15 minuti da Milano.',
   'Per informazioni su lezioni, collaborazioni live o sessioni in studio, contattami direttamente tramite il form o sui miei canali social.',
 ]
 
