@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Container, Button, Divider } from '@/components/ui'
-import { CONTACT } from '@/data/contact'
+import { CONTACT, WHATSAPP_URL } from '@/data/contact'
 import { SOCIALS } from './SocialLinks'
 
 type Reason = 'lezione' | 'consulenza'
@@ -133,11 +133,13 @@ export function ContactSection() {
               </h3>
               {[
                 { icon: '✉️', label: 'Email', value: CONTACT.email, href: `mailto:${CONTACT.email}` },
+                { icon: '💬', label: 'WhatsApp', value: CONTACT.phone, href: WHATSAPP_URL },
                 { icon: '📞', label: 'Telefono', value: CONTACT.phone, href: `tel:${CONTACT.phone.replace(/\s/g, '')}` },
               ].map((c) => (
                 <a
                   key={c.label}
                   href={c.href}
+                  {...(c.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="flex items-center gap-4 p-4 rounded-[var(--radius-md)] bg-[var(--color-surface-elevated)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/40 transition-colors group"
                 >
                   <span className="text-xl">{c.icon}</span>

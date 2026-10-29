@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { bebasNeue, inter } from '@/lib/fonts'
 import { Navbar } from '@/components/sections/Navbar'
 import { Footer } from '@/components/sections/Footer'
+import { WhatsAppButton } from '@/components/sections/WhatsAppButton'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   )
