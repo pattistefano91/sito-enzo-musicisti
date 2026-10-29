@@ -12,18 +12,31 @@ export interface MediaPhoto {
   caption: string
 }
 
+// I 4 video più visti del canale https://www.youtube.com/@EnzoBoscarino (ottobre 2026)
 export const VIDEOS: MediaVideo[] = [
   {
     id: 'v1',
-    title: 'Live Session — [Titolo da aggiornare]',
-    youtubeId: 'JVGHPgNBz5E', // placeholder — sostituire con video reale di Enzo
-    description: 'Estratto live da [venue/evento] — [anno]',
+    title: 'Laurea in Batteria — Conservatorio Verdi Milano',
+    youtubeId: 'JxCghXOhpVg',
+    description: 'Recital dedicato a Pino Daniele — 66K visualizzazioni',
   },
   {
     id: 'v2',
-    title: 'Studio Recording — [Titolo da aggiornare]',
-    youtubeId: 'YJVmu6yttiw', // placeholder
-    description: 'Session in studio per [artista/progetto]',
+    title: 'Un amore da favola — Lucrezia Germano',
+    youtubeId: '1FPxChmUNm8',
+    description: 'Lucrezia Germano ed Enzo Boscarino — 3,3K visualizzazioni',
+  },
+  {
+    id: 'v3',
+    title: 'SixPack Groove',
+    youtubeId: 'guvuM3LJttk',
+    description: 'Enzo Boscarino — 3,1K visualizzazioni',
+  },
+  {
+    id: 'v4',
+    title: 'Nessun Rimpianto — Live with Maxmania',
+    youtubeId: 'IIE_wbVNhBQ',
+    description: 'Enzo Boscarino live — 2,7K visualizzazioni',
   },
 ]
 
