@@ -8,6 +8,7 @@ interface BioSectionProps {
   id: string
   eyebrow: string
   title: string
+  titleHref?: string
   paragraphs: string[]
   imageSrc: string
   imageAlt: string
@@ -35,6 +36,7 @@ export function BioSection({
   id,
   eyebrow,
   title,
+  titleHref,
   paragraphs,
   imageSrc,
   imageAlt,
@@ -84,7 +86,20 @@ export function BioSection({
           className="text-[clamp(2rem,5vw,3.5rem)] text-[var(--color-text-primary)] mt-2 leading-none"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          {title}
+          {titleHref ? (
+            <a
+              href={titleHref}
+              className="group inline-flex items-baseline gap-3 hover:text-[var(--color-primary)] transition-colors"
+            >
+              {title}
+              <span aria-hidden className="text-[0.5em] translate-y-[-0.1em] transition-transform group-hover:translate-x-1">
+                →
+              </span>
+              <span className="sr-only">— vai alla galleria foto</span>
+            </a>
+          ) : (
+            title
+          )}
         </h2>
         <Divider className="mt-4 w-12 border-[var(--color-primary)] border-t-2" />
       </div>

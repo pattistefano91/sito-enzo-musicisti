@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Container, Divider } from '@/components/ui'
 import { VIDEOS, PHOTOS } from '@/data/media'
@@ -10,6 +10,25 @@ type Tab = 'video' | 'foto'
 export function MediaSection() {
   const [activeTab, setActiveTab] = useState<Tab>('video')
   const [lightbox, setLightbox] = useState<string | null>(null)
+
+  // I link a "#foto" (es. dal titolo "Il mio studio") aprono la tab Foto
+  useEffect(() => {
+    function openGallery() {
+      setActiveTab('foto')
+      requestAnimationFrame(() =>
+        document.getElementById('media')?.scrollIntoView({ behavior: 'smooth' })
+      )
+    }
+    function onClick(e: MouseEvent) {
+      const link = (e.target as Element).closest('a[href="#foto"]')
+      if (!link) return
+      e.preventDefault()
+      openGallery()
+    }
+    if (window.location.hash === '#foto') openGallery()
+    document.addEventListener('click', onClick)
+    return () => document.removeEventListener('click', onClick)
+  }, [])
 
   return (
     <section id="media" className="py-24 bg-[var(--color-surface-page)]">

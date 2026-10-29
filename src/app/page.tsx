@@ -58,8 +58,9 @@ export default function Home() {
         id="il-mio-studio"
         eyebrow="Studio recording"
         title="IL MIO STUDIO"
+        titleHref="#foto"
         paragraphs={STUDIO_TEXT}
-        imageSrc="/images/studio-1.jpg"
+        imageSrc="/images/foto/studio-06.jpg"
         imageAlt="Studio di registrazione Enzo Boscarino"
         imageAspect="aspect-[4/3]"
         imagePosition="left"
