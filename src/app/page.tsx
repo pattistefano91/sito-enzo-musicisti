@@ -20,9 +20,9 @@ export default function Home() {
       <AboutSection />
 
       <BioSection
-        id="chi-sono"
+        id="qualcosa-di-me"
         eyebrow="La storia"
-        title="CHI SONO"
+        title="VI DICO QUALCOSA DI ME"
         paragraphs={CHI_SONO_TEXT}
         imageSrc="/images/enzo-portrait.png"
         imageAlt="Enzo Boscarino — ritratto"

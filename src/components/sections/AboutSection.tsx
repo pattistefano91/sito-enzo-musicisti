@@ -20,13 +20,13 @@ export function AboutSection() {
           className="mb-16"
         >
           <span className="text-label text-[var(--color-primary)] text-xs tracking-widest uppercase">
-            Chi sono
+            Biografia
           </span>
           <h2
             className="text-[clamp(2.5rem,6vw,4.5rem)] text-[var(--color-text-primary)] mt-2 leading-none"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            ENZO BOSCARINO
+            CHI È ENZO BOSCARINO
           </h2>
           <Divider className="mt-6 w-16 border-[var(--color-primary)] border-t-2" />
         </motion.div>
