@@ -27,11 +27,22 @@ export function Navbar() {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled
-          ? 'bg-[var(--color-surface-page)]/90 backdrop-blur-md border-b border-[var(--color-border)]'
-          : 'bg-transparent'
+        menuOpen
+          ? 'bg-[var(--color-surface-page)] border-b border-[var(--color-border)]'
+          : scrolled
+            ? 'bg-[var(--color-surface-page)]/90 backdrop-blur-md border-b border-[var(--color-border)]'
+            : 'bg-transparent'
       )}
     >
+      {/* Oscura il contenuto sotto il menu mobile; tocco fuori = chiude */}
+      <div
+        aria-hidden
+        onClick={() => setMenuOpen(false)}
+        className={cn(
+          'lg:hidden fixed inset-0 -z-10 bg-black/70 transition-opacity duration-300',
+          menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        )}
+      />
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
 
