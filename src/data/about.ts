@@ -22,7 +22,7 @@ export const CHI_SONO_TEXT = [
   'Nel 2018 ho partecipato e vinto il Premio Nazionale delle Arti (MUR) con la band di Viviana Colombo (in arte VV); ho inoltre ricevuto una menzione speciale per "Creatività nel drumming" da parte di Enrico Ruggeri, Celso Valli e Gaetano Curreri, vincendo anche il primo premio relativo a questa categoria (Fondazione Pino Daniele). Nel 2019 vinco il bando per assistente alla didattica presso il Conservatorio Verdi di Milano e inizio attivamente a lavorare in conservatorio in qualità di assistente alla didattica per il M° Maurizio Dei Lazzaretti e per tutto il dipartimento POP; successivamente divento il responsabile del settore pop rock e degli allestimenti presso l\'ufficio Produzione del Conservatorio di Milano, carica che ricopro tutt\'oggi.',
   'Il groove, il sorriso e l\'empatia sono il mio marchio di fabbrica. Ho la fortuna di poter vantare collaborazioni nel mondo della musica Pop, sia in studio che live, tra le quali: Al Bano Carrisi, Chiara Galiazzo, Umberto e Rudy Smaila, Elisabetta Eneh, VV, I-MATT, Gianluca Burzese, Federico Poggipollini, Max Cottafavi, Debora Cesti, Soul Circus…',
   'Attualmente collaboro con contratti ufficiali sottoscritti con i marchi: Ludwig, Lantec, Aramini, Ufip.',
-  'Insegno a Milano e Casalmaiocco (LO); effettuo anche lezioni di studio recording presso il mio studio a Casalmaiocco (LO), a 15 minuti da Milano.',
+  'Insegno a Milano e Casalmaiocco (LO); effettuo anche lezioni di studio recording presso il mio studio a Casalmaiocco (LO), a 10 minuti da Milano.',
 ]
 
 export const COSA_INSEGNO_TEXT = [
@@ -66,7 +66,7 @@ export const RIFERIMENTI_TEXT = [
 ]
 
 export const DOVE_MI_TROVI_TEXT = [
-  'Insegno a Milano e Casalmaiocco (LO). Effettuo anche lezioni di studio recording presso il mio studio privato a Casalmaiocco, a 15 minuti da Milano.',
+  'Insegno a Milano e Casalmaiocco (LO). Effettuo anche lezioni di studio recording presso il mio studio privato a Casalmaiocco, a 10 minuti da Milano.',
   'Per informazioni su lezioni, collaborazioni live o sessioni in studio, contattami direttamente tramite il form o sui miei canali social.',
 ]
 

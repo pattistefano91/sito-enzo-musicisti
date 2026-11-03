@@ -4,7 +4,7 @@ export const CONTACT = {
   studio: {
     name: 'EB Studio',
     address: 'Quartiere Madonnina, Casalmaiocco (LO)',
-    note: 'a 15 minuti da Milano',
+    note: 'a 10 minuti da Milano',
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Quartiere+Madonnina+Casalmaiocco+LO',
   },
 } as const

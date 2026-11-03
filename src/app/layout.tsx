@@ -3,11 +3,27 @@ import { bebasNeue, inter } from '@/lib/fonts'
 import { Navbar } from '@/components/sections/Navbar'
 import { Footer } from '@/components/sections/Footer'
 import { WhatsAppButton } from '@/components/sections/WhatsAppButton'
+import { SITE_URL } from '@/data/site'
 import './globals.css'
 
+const TITLE = 'Enzo Boscarino — Batterista e insegnante Rock/Pop | Milano'
+const DESCRIPTION =
+  'Enzo Boscarino, batterista professionista e insegnante di batteria a Milano e Casalmaiocco (LO). Lezioni private, consulenza online e studio recording.'
+
 export const metadata: Metadata = {
-  title: 'Enzo Boscarino — Batterista Rock/Pop',
-  description: 'Sito ufficiale di Enzo Boscarino, batterista e insegnante di musica Rock/Pop.',
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    locale: 'it_IT',
+    url: '/',
+    siteName: 'Enzo Boscarino',
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
 }
 
 export default function RootLayout({
