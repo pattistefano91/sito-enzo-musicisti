@@ -26,6 +26,24 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
 }
 
+const JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Enzo Boscarino',
+  jobTitle: 'Batterista e insegnante di batteria',
+  url: SITE_URL,
+  image: `${SITE_URL}/images/enzo-portrait.png`,
+  email: 'enzoboscarinodrummer@gmail.com',
+  telephone: '+393295432713',
+  address: { '@type': 'PostalAddress', addressLocality: 'Casalmaiocco', addressRegion: 'LO', addressCountry: 'IT' },
+  sameAs: [
+    'https://www.youtube.com/@EnzoBoscarino',
+    'https://www.instagram.com/enzoboscarinogroove',
+    'https://www.facebook.com/boscadrummer/',
+    'https://open.spotify.com/playlist/40B53wK7kq4syG7ZfSxTmx',
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,6 +55,10 @@ export default function RootLayout({
       className={`${bebasNeue.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+        />
         <Navbar />
         <div className="flex-1 flex flex-col pt-16">
           {children}
