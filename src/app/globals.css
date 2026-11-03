@@ -28,9 +28,15 @@
 
 html {
   color-scheme: dark;
+  /* Le animazioni whileInView partono fuori schermo (x ±32): senza questo
+     allargano la pagina e il telefono la mostra ingrandita/spostata. */
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
+  overflow-x: hidden;
+  overflow-x: clip;
   background-color: var(--color-surface-page);
   color: var(--color-text-primary);
   font-family: var(--font-body), system-ui, sans-serif;
