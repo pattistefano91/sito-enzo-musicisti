@@ -1,23 +1,11 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Container, Button, Divider } from '@/components/ui'
-import { CONTACT, WHATSAPP_URL } from '@/data/contact'
+import { Container, Divider } from '@/components/ui'
+import { CONTACT, MAILTO_URL, WHATSAPP_URL } from '@/data/contact'
 import { SOCIALS } from './SocialLinks'
 
-type Reason = 'lezione' | 'consulenza'
-
 export function ContactSection() {
-  const [reason, setReason] = useState<Reason>('lezione')
-  const [sent, setSent] = useState(false)
-
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    // Placeholder — collegare a servizio reale (Resend, Formspree, ecc.)
-    setSent(true)
-  }
-
   return (
     <section id="contatti" className="py-24 bg-[var(--color-surface-card)]">
       <Container>
@@ -41,82 +29,39 @@ export function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-          {/* Form */}
+          {/* Scrivimi */}
           <motion.div
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -32 }}
             transition={{ duration: 0.6, ease: 'easeOut' as const }}
+            className="flex flex-col items-start gap-6"
           >
-            {sent ? (
-              <div className="flex flex-col items-start gap-4 py-12">
-                <span className="text-4xl">✅</span>
-                <h3 className="text-heading-3 text-[var(--color-text-primary)]" style={{ fontFamily: 'var(--font-display)' }}>
-                  MESSAGGIO INVIATO
-                </h3>
-                <p className="text-body-md text-[var(--color-text-muted)]">
-                  Grazie per avermi scritto! Ti risponderò al più presto.
-                </p>
-                <Button variant="ghost" onClick={() => setSent(false)}>Invia un altro messaggio</Button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-
-                {/* Tipo richiesta */}
-                <div className="flex gap-2 flex-wrap">
-                  {([
-                    { id: 'lezione', label: 'Lezione privata' },
-                    { id: 'consulenza', label: 'Consulenza online' },
-                  ] as { id: Reason; label: string }[]).map((r) => (
-                    <button
-                      key={r.id}
-                      type="button"
-                      onClick={() => setReason(r.id)}
-                      className={`px-4 py-1.5 rounded-pill text-label text-xs border transition-colors ${
-                        reason === r.id
-                          ? 'bg-[var(--color-primary)] text-black border-[var(--color-primary)]'
-                          : 'border-[var(--color-border)] text-[var(--color-text-muted)] hover:border-[var(--color-primary)]/50'
-                      }`}
-                    >
-                      {r.label}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    required
-                    name="nome"
-                    placeholder="Nome"
-                    className="h-12 rounded-[var(--radius-md)] bg-[var(--color-surface-elevated)] border border-[var(--color-border)] px-4 text-body-md text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-primary)] transition-colors"
-                  />
-                  <input
-                    required
-                    name="cognome"
-                    placeholder="Cognome"
-                    className="h-12 rounded-[var(--radius-md)] bg-[var(--color-surface-elevated)] border border-[var(--color-border)] px-4 text-body-md text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-primary)] transition-colors"
-                  />
-                </div>
-                <input
-                  required
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  className="h-12 rounded-[var(--radius-md)] bg-[var(--color-surface-elevated)] border border-[var(--color-border)] px-4 text-body-md text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-primary)] transition-colors"
-                />
-                <textarea
-                  required
-                  name="messaggio"
-                  placeholder="Il tuo messaggio..."
-                  rows={5}
-                  className="rounded-[var(--radius-md)] bg-[var(--color-surface-elevated)] border border-[var(--color-border)] px-4 py-3 text-body-md text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-primary)] transition-colors resize-none"
-                />
-                <Button type="submit" variant="primary" size="lg" className="self-start">
-                  Invia messaggio
-                </Button>
-              </form>
-            )}
+            <h3 className="text-heading-3 text-[var(--color-text-primary)]" style={{ fontFamily: 'var(--font-display)' }}>
+              PRENOTA UNA LEZIONE O UNA CONSULENZA
+            </h3>
+            <p className="text-body-md text-[var(--color-text-muted)] max-w-md">
+              Lezione privata o consulenza online: scrivimi su WhatsApp o via email, il messaggio è già
+              pronto, ti basta inviarlo. Ti rispondo il prima possibile.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-14 px-8 rounded-pill font-body font-medium text-base text-label tracking-widest transition-colors bg-[var(--color-primary)] text-black hover:bg-[var(--color-primary-hover)]"
+              >
+                Scrivimi su WhatsApp
+              </a>
+              <a
+                href={MAILTO_URL}
+                className="inline-flex items-center justify-center h-14 px-8 rounded-pill font-body font-medium text-base text-label tracking-widest transition-colors border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-black"
+              >
+                Scrivimi una email
+              </a>
+            </div>
           </motion.div>
+
 
           {/* Info contatti */}
           <motion.div
@@ -132,7 +77,7 @@ export function ContactSection() {
                 CONTATTI DIRETTI
               </h3>
               {[
-                { icon: '✉️', label: 'Email', value: CONTACT.email, href: `mailto:${CONTACT.email}` },
+                { icon: '✉️', label: 'Email', value: CONTACT.email, href: MAILTO_URL },
                 { icon: '💬', label: 'WhatsApp', value: CONTACT.phone, href: WHATSAPP_URL },
                 { icon: '📞', label: 'Telefono', value: CONTACT.phone, href: `tel:${CONTACT.phone.replace(/\s/g, '')}` },
               ].map((c) => (
