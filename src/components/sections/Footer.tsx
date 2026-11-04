@@ -1,6 +1,7 @@
 import { Container } from '@/components/ui'
 import { ARTIST } from '@/data/navigation'
-import { CONTACT } from '@/data/contact'
+import Link from 'next/link'
+import { CONTACT, VAT_NUMBER } from '@/data/contact'
 
 export function Footer() {
   return (
@@ -13,6 +14,9 @@ export function Footer() {
           </span>
           <p className="text-caption text-center">
             © {new Date().getFullYear()} Enzo Boscarino — Tutti i diritti riservati
+            {VAT_NUMBER && <> — P.IVA {VAT_NUMBER}</>}
+            {' · '}
+            <Link href="/privacy" className="hover:text-[var(--color-primary)] transition-colors">Privacy</Link>
           </p>
           <a
             href={`mailto:${CONTACT.email}`}

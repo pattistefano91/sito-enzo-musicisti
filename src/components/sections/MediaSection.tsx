@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Container, Divider } from '@/components/ui'
 import { VIDEOS, PHOTOS } from '@/data/media'
+import { VideoPlayer } from './VideoPlayer'
 
 type Tab = 'video' | 'foto'
 
@@ -80,15 +81,7 @@ export function MediaSection() {
             >
               {VIDEOS.map((v) => (
                 <div key={v.id} className="flex flex-col gap-3">
-                  <div className="relative aspect-video rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-surface-elevated)]">
-                    <iframe
-                      src={`https://www.youtube-nocookie.com/embed/${v.youtubeId}${v.start ? `?start=${v.start}` : ''}`}
-                      title={v.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
-                    />
-                  </div>
+                  <VideoPlayer video={v} />
                   <div>
                     <p className="text-label text-sm text-[var(--color-text-primary)]">{v.title}</p>
                     <p className="text-caption">{v.description}</p>

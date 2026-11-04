@@ -19,3 +19,6 @@ const EMAIL_BODY =
 export const MAILTO_URL = `mailto:${CONTACT.email}?subject=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`
 
 export const WHATSAPP_URL =`https://wa.me/${CONTACT.phone.replace(/\D/g, '')}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
+
+// Partita IVA: inserire qui quando disponibile, compare nel footer
+export const VAT_NUMBER: string | null = null
