@@ -1,7 +1,7 @@
 import { Container } from '@/components/ui'
 import { ARTIST } from '@/data/navigation'
 import Link from 'next/link'
-import { CONTACT, VAT_NUMBER } from '@/data/contact'
+import { CONTACT, LEGAL } from '@/data/contact'
 
 export function Footer() {
   return (
@@ -14,7 +14,6 @@ export function Footer() {
           </span>
           <p className="text-caption text-center">
             © {new Date().getFullYear()} Enzo Boscarino — Tutti i diritti riservati
-            {VAT_NUMBER && <> — P.IVA {VAT_NUMBER}</>}
             {' · '}
             <Link href="/privacy" className="hover:text-[var(--color-primary)] transition-colors">Privacy</Link>
           </p>
@@ -25,6 +24,9 @@ export function Footer() {
             {CONTACT.email}
           </a>
         </div>
+        <p className="text-caption text-center mt-6">
+          C.F. {LEGAL.fiscalCode} — Prestazioni erogate tramite {LEGAL.billingEntity}
+        </p>
       </Container>
     </footer>
   )

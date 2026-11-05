@@ -20,5 +20,8 @@ export const MAILTO_URL = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
 
 export const WHATSAPP_URL =`https://wa.me/${CONTACT.phone.replace(/\D/g, '')}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
 
-// Partita IVA: inserire qui quando disponibile, compare nel footer
-export const VAT_NUMBER: string | null = null
+// Dati legali mostrati nel footer e nella pagina Privacy
+export const LEGAL = {
+  fiscalCode: 'BSCVCN89A19I754W',
+  billingEntity: 'FeaTuring S.r.l.',
+} as const

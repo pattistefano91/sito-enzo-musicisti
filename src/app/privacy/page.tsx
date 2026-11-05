@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Container } from '@/components/ui'
-import { CONTACT, VAT_NUMBER } from '@/data/contact'
+import { CONTACT, LEGAL } from '@/data/contact'
 
 export const metadata: Metadata = {
   title: 'Privacy — Enzo Boscarino',
@@ -25,8 +25,8 @@ export default function PrivacyPage() {
           <section className="flex flex-col gap-3">
             <h2 className="text-heading-3 text-[var(--color-text-primary)]" style={{ fontFamily: 'var(--font-display)' }}>TITOLARE DEL TRATTAMENTO</h2>
             <p className="text-body-md text-[var(--color-text-muted)] leading-relaxed">
-              Enzo Boscarino, {CONTACT.studio.address}
-              {VAT_NUMBER && <>, P.IVA {VAT_NUMBER}</>}.
+              Enzo Boscarino, C.F. {LEGAL.fiscalCode}, {CONTACT.studio.address}.
+              {' '}Le prestazioni sono erogate tramite {LEGAL.billingEntity}.
               {' '}Email: <a className="text-[var(--color-primary)] hover:underline" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
             </p>
           </section>
